@@ -1,159 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dimensions VFX — Home</title>
-  <meta name="description" content="Dimensions VFX — 3D music videos, CGI, VFX, cover art & promo visuals." />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Instagram embed script (needed if you lazy-load real embeds) -->
-  <script async defer src="//www.instagram.com/embed.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensions VFX | Cinematic Visuals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="images/logo.svg" alt="Dimensions VFX logo" class="logo-img" />
-        <div class="logo-text">DIMENSIONS VFX</div>
-      </div>
 
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html" class="cta">Contact Us</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="navbar">
+        <div class="logo">DIMENSIONS VFX</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
 
-  <!-- HERO / TOP VIDEO -->
-  <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="images/Globe3D.mp4" type="video/mp4" />
-      <!-- fallback image -->
-      <img src="images/hero-fallback.jpg" alt="Globe preview" />
-    </video>
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="globe-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="video-overlay"></div>
 
-    <div class="hero-overlay container">
-      <div class="hero-copy">
-        <h1>Cinematic visuals for artists who have something exceptional.</h1>
-        <p class="lead">
-          Dimensions VFX is a visual studio crafting 3D music videos, CGI-driven promos, cover art and thumbnails for artists worldwide.
-        </p>
-      </div>
-    </div>
-  </section>
+        <div class="hero-content">
+            <h1>Cinematic visuals for artists who have something exceptional.</h1>
+            <p>Dimensions VFX is a visual studio crafting 3D music videos, CGI-driven promos, cover art and thumbnails for artists worldwide.</p>
+            <a href="#contact" class="cta-button">Start a Project</a>
+        </div>
+    </header>
 
-  <!-- INSTAGRAM REELS ROW with poster thumbnails (lazy-load embed on click) -->
-  <section class="instagram-row container">
-    <div class="scroll-label">Instagram Reels</div>
+    <section class="portfolio">
+        <div class="section-header">
+            <h2>Recent Works</h2>
+        </div>
+        
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <div class="placeholder-img">3D VISUALS</div>
+                <div class="caption">
+                    <h3>CGI Promo</h3>
+                    <span>Dimensions VFX</span>
+                </div>
+            </div>
 
-<div class="reels" id="reels">
+            <div class="gallery-item wide video-embed">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
 
-  <div class="reel-item" data-permalink="https://www.instagram.com/reel/DRT_iWzD6do/">
-    <a class="reel-poster" href="https://www.instagram.com/reel/DRT_iWzD6do/" target="_blank" rel="noopener">
-      <img src="images/ig1.jpg" alt="Instagram reel 1 poster" loading="lazy" />
-    </a>
-  </div>
+            <div class="gallery-item vertical instagram-embed">
+                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #111; color: #555;">
+                    [PASTE INSTAGRAM EMBED CODE HERE]
+                </div>
+            </div>
 
-  <div class="reel-item" data-permalink="https://www.instagram.com/reel/DOGHq-8j-fo/">
-    <a class="reel-poster" href="https://www.instagram.com/reel/DOGHq-8j-fo/" target="_blank" rel="noopener">
-      <img src="images/ig2.jpg" alt="Instagram reel 2 poster" loading="lazy" />
-    </a>
-  </div>
+            <div class="gallery-item">
+                <div class="placeholder-img">COVER ART</div>
+                <div class="caption">
+                    <h3>Album Art</h3>
+                    <span>3D Render</span>
+                </div>
+            </div>
 
-  <div class="reel-item" data-permalink="https://www.instagram.com/reel/DOAsfrFj3QW/">
-    <a class="reel-poster" href="https://www.instagram.com/reel/DOAsfrFj3QW/" target="_blank" rel="noopener">
-      <img src="images/ig3.jpg" alt="Instagram reel 3 poster" loading="lazy" />
-    </a>
-  </div>
+             <div class="gallery-item vertical instagram-embed">
+                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #111; color: #555;">
+                    [PASTE INSTAGRAM EMBED CODE HERE]
+                </div>
+            </div>
 
-  <div class="reel-item" data-permalink="https://www.instagram.com/reel/DNYTrTbSZGG/">
-    <a class="reel-poster" href="https://www.instagram.com/reel/DNYTrTbSZGG/" target="_blank" rel="noopener">
-      <img src="images/ig4.jpg" alt="Instagram reel 4 poster" loading="lazy" />
-    </a>
-  </div>
+        </div>
+    </section>
 
-  <div class="reel-item" data-permalink="https://www.instagram.com/reel/DNArzd2yv2y/">
-    <a class="reel-poster" href="https://www.instagram.com/reel/DNArzd2yv2y/" target="_blank" rel="noopener">
-      <img src="images/ig5.jpg" alt="Instagram reel 5 poster" loading="lazy" />
-    </a>
-  </div>
+    <footer>
+        <p>&copy; 2025 Dimensions VFX. All rights reserved.</p>
+    </footer>
 
-  <div class="reel-item" data-permalink="https://www.instagram.com/reel/DMo7AKoSj4T/">
-    <a class="reel-poster" href="https://www.instagram.com/reel/DMo7AKoSj4T/" target="_blank" rel="noopener">
-      <img src="images/ig6.jpg" alt="Instagram reel 6 poster" loading="lazy" />
-    </a>
-  </div>
-
-</div>
-
-  </section>
-
-  <!-- YOUTUBE + COPY ROW -->
-  <section class="showreel-section container">
-    <div class="showreel">
-      <div class="video-wrap">
-        <iframe
-          id="ytplayer"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          title="Dimensions VFX Showreel"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-
-    <aside class="showreel-copy">
-      <h2>Cinematic visuals for artists who have something exceptional.</h2>
-      <p>
-        We create 3D music videos, CGI promos, cover art and thumbnails with a street × luxury aesthetic. Remote-first workflow — artists in USA, UK, AUS & Nigeria.
-      </p>
-      <p class="small-note">Share a track + timeline via <strong>dimensionsvfx@gmail.com</strong> or DM on Instagram.</p>
-    </aside>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Dimensions VFX. All rights reserved.</div>
-      <div class="foot-right">3D Visuals • CGI • VFX • Cover Art</div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Optional: make poster click replace with official Instagram embed (lazy load)
-    // This will create a blockquote element and call the Instagram embed processor.
-    // If embed fails or you prefer not to do this, leaving posters as links is fine.
-    (function () {
-      const items = document.querySelectorAll('.reel-item');
-      items.forEach(item => {
-        item.addEventListener('click', function (e) {
-          // open in new tab on ctrl/cmd click or middle click
-          if (e.ctrlKey || e.metaKey || e.button === 1) return;
-          e.preventDefault();
-          const permalink = item.dataset.permalink;
-          // build blockquote
-          const block = document.createElement('blockquote');
-          block.className = 'instagram-media';
-          block.setAttribute('data-instgrm-permalink', permalink);
-          block.setAttribute('data-instgrm-version', '14');
-          block.style.background = 'transparent';
-          // remove children and append the blockquote
-          item.innerHTML = '';
-          item.appendChild(block);
-          // ensure instagram script processes it
-          if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
-            window.instgrm.Embeds.process();
-          }
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
