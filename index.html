@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dimensions VFX — Home</title>
   <meta name="description" content="Dimensions VFX — 3D music videos, CGI, VFX, cover art & promo visuals." />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- Instagram embed script (required for Instagram blockquote embeds) -->
+
+  <!-- Instagram embed script (needed if you lazy-load real embeds) -->
   <script async defer src="//www.instagram.com/embed.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <div class="logo-mark">DVFX</div>
-        <div class="logo-text">Dimensions VFX</div>
+        <img src="images/logo.svg" alt="Dimensions VFX logo" class="logo-img" />
+        <div class="logo-text">DIMENSIONS VFX</div>
       </div>
 
       <nav class="main-nav">
@@ -30,7 +33,7 @@
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="images/Globe3D.mp4" type="video/mp4" />
-      <!-- Fallback image if video fails -->
+      <!-- fallback image -->
       <img src="images/hero-fallback.jpg" alt="Globe preview" />
     </video>
 
@@ -44,35 +47,60 @@
     </div>
   </section>
 
-  <!-- INSTAGRAM REELS ROW -->
+  <!-- INSTAGRAM REELS ROW with poster thumbnails (lazy-load embed on click) -->
   <section class="instagram-row container">
     <div class="scroll-label">Instagram Reels</div>
 
-    <div class="reels">
-      <!-- Replace data-instgrm-permalink value with the permalink of your reel/post -->
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/PLACEHOLDER1/" data-instgrm-version="14" style="background:transparent;"></blockquote>
+    <div class="reels" id="reels">
+      <!-- Item 1 -->
+      <div class="reel-item" data-permalink="https://www.instagram.com/reel/REEL_ID_1/">
+        <a class="reel-poster" href="https://www.instagram.com/reel/REEL_ID_1/" target="_blank" rel="noopener">
+          <img src="images/ig1.jpg" alt="Instagram reel 1 poster" loading="lazy" />
+        </a>
+      </div>
 
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/PLACEHOLDER2/" data-instgrm-version="14" style="background:transparent;"></blockquote>
+      <!-- Item 2 -->
+      <div class="reel-item" data-permalink="https://www.instagram.com/reel/REEL_ID_2/">
+        <a class="reel-poster" href="https://www.instagram.com/reel/REEL_ID_2/" target="_blank" rel="noopener">
+          <img src="images/ig2.jpg" alt="Instagram reel 2 poster" loading="lazy" />
+        </a>
+      </div>
 
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/PLACEHOLDER3/" data-instgrm-version="14" style="background:transparent;"></blockquote>
+      <!-- Item 3 -->
+      <div class="reel-item" data-permalink="https://www.instagram.com/reel/REEL_ID_3/">
+        <a class="reel-poster" href="https://www.instagram.com/reel/REEL_ID_3/" target="_blank" rel="noopener">
+          <img src="images/ig3.jpg" alt="Instagram reel 3 poster" loading="lazy" />
+        </a>
+      </div>
 
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/PLACEHOLDER4/" data-instgrm-version="14" style="background:transparent;"></blockquote>
+      <!-- Item 4 -->
+      <div class="reel-item" data-permalink="https://www.instagram.com/reel/REEL_ID_4/">
+        <a class="reel-poster" href="https://www.instagram.com/reel/REEL_ID_4/" target="_blank" rel="noopener">
+          <img src="images/ig4.jpg" alt="Instagram reel 4 poster" loading="lazy" />
+        </a>
+      </div>
 
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/PLACEHOLDER5/" data-instgrm-version="14" style="background:transparent;"></blockquote>
+      <!-- Item 5 -->
+      <div class="reel-item" data-permalink="https://www.instagram.com/reel/REEL_ID_5/">
+        <a class="reel-poster" href="https://www.instagram.com/reel/REEL_ID_5/" target="_blank" rel="noopener">
+          <img src="images/ig5.jpg" alt="Instagram reel 5 poster" loading="lazy" />
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- YOUTUBE + COPY ROW -->
   <section class="showreel-section container">
     <div class="showreel">
-      <!-- Replace VIDEO_ID with your YouTube id -->
       <div class="video-wrap">
         <iframe
+          id="ytplayer"
           src="https://www.youtube.com/embed/VIDEO_ID"
           title="Dimensions VFX Showreel"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
 
@@ -81,7 +109,7 @@
       <p>
         We create 3D music videos, CGI promos, cover art and thumbnails with a street × luxury aesthetic. Remote-first workflow — artists in USA, UK, AUS & Nigeria.
       </p>
-      <p class="small-note">Share a track + brief timeline via <strong>dimensionsvfx@gmail.com</strong> or DM on Instagram.</p>
+      <p class="small-note">Share a track + timeline via <strong>dimensionsvfx@gmail.com</strong> or DM on Instagram.</p>
     </aside>
   </section>
 
@@ -93,13 +121,35 @@
   </footer>
 
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Re-render Instagram embeds (after dynamic insertion)
-    // The embed.js file will scan these blockquotes automatically on load.
-    // If you change the blockquotes dynamically later, call:
-    // window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
+    // Optional: make poster click replace with official Instagram embed (lazy load)
+    // This will create a blockquote element and call the Instagram embed processor.
+    // If embed fails or you prefer not to do this, leaving posters as links is fine.
+    (function () {
+      const items = document.querySelectorAll('.reel-item');
+      items.forEach(item => {
+        item.addEventListener('click', function (e) {
+          // open in new tab on ctrl/cmd click or middle click
+          if (e.ctrlKey || e.metaKey || e.button === 1) return;
+          e.preventDefault();
+          const permalink = item.dataset.permalink;
+          // build blockquote
+          const block = document.createElement('blockquote');
+          block.className = 'instagram-media';
+          block.setAttribute('data-instgrm-permalink', permalink);
+          block.setAttribute('data-instgrm-version', '14');
+          block.style.background = 'transparent';
+          // remove children and append the blockquote
+          item.innerHTML = '';
+          item.appendChild(block);
+          // ensure instagram script processes it
+          if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
+            window.instgrm.Embeds.process();
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
