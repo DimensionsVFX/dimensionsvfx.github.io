@@ -6,7 +6,68 @@
   <title>Dimensions VFX — Home</title>
   <meta name="description" content="Dimensions VFX — 3D music videos, CGI, VFX, cover art & promo visuals." />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Instagram embed script (only once) -->
   <script async defer src="//www.instagram.com/embed.js"></script>
+
+  <!-- Modal CSS (black & white theme) -->
+  <style>
+    /* Instagram modal styles (black & white) */
+    .ig-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      padding: 28px;
+    }
+    .ig-modal[aria-hidden="false"] { display: flex; }
+
+    .ig-modal-inner {
+      position: relative;
+      width: 920px;
+      max-width: calc(100% - 48px);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+      border: 1px solid #111;
+    }
+
+    .ig-modal-close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      z-index: 1010;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .ig-modal-content {
+      background: #000;
+      padding: 18px;
+    }
+
+    .ig-loading { color: #ddd; font-size: 14px; padding: 40px 10px; text-align: center; }
+
+    .ig-modal-content .instagram-media {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+
+    @media (max-width:760px) {
+      .ig-modal-inner { width: 100%; max-width: calc(100% - 28px); border-radius: 8px; }
+      .ig-modal-close { right: 8px; top: 8px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -44,7 +105,7 @@
     </div>
   </section>
 
-  <!-- INSTAGRAM REELS ROW (poster thumbnails; lazy-load embed on click) -->
+  <!-- INSTAGRAM REELS ROW (poster thumbnails; modal on click) -->
   <section class="instagram-row container">
     <div class="scroll-label">Instagram Reels</div>
 
@@ -112,6 +173,16 @@
     </aside>
   </section>
 
+  <!-- Instagram modal (inserts official embed into modal) -->
+  <div id="ig-modal" class="ig-modal" aria-hidden="true" role="dialog" aria-label="Instagram Reel">
+    <div class="ig-modal-inner" role="document">
+      <button class="ig-modal-close" aria-label="Close">✕</button>
+      <div class="ig-modal-content" id="ig-modal-content">
+        <div class="ig-loading">Loading…</div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Dimensions VFX. All rights reserved.</div>
@@ -123,23 +194,76 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     (function () {
-      // Lazy-replace poster with official instagram embed on click (if allowed)
-      const items = document.querySelectorAll('.reel-item');
-      items.forEach(item => {
+      // Modal elements
+      const modal = document.getElementById('ig-modal');
+      const modalContent = document.getElementById('ig-modal-content');
+      const closeBtn = modal.querySelector('.ig-modal-close');
+
+      function openModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        // cleanup to free resources
+        modalContent.innerHTML = '<div class="ig-loading">Loading…</div>';
+        document.body.style.overflow = '';
+      }
+
+      // Close handlers
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+      });
+
+      // Attach click handlers to reel items (modal embed)
+      document.querySelectorAll('.reel-item').forEach(item => {
         item.addEventListener('click', function (e) {
           // allow open-in-new-tab on ctrl/cmd/middle click
-          if (e.ctrlKey || e.metaKey || e.button === 1) return;
+          if (e.ctrlKey || e.metaKey || e.button === 1) {
+            window.open(item.dataset.permalink, '_blank', 'noopener');
+            return;
+          }
           e.preventDefault();
           const permalink = item.dataset.permalink;
+          if (!permalink) return;
+          // Build official blockquote
           const block = document.createElement('blockquote');
           block.className = 'instagram-media';
           block.setAttribute('data-instgrm-permalink', permalink);
           block.setAttribute('data-instgrm-version', '14');
           block.style.background = 'transparent';
-          item.innerHTML = '';
-          item.appendChild(block);
+          // Insert into modal and open
+          modalContent.innerHTML = '';
+          modalContent.appendChild(block);
+          openModal();
+          // Process embed (if instagram script loaded)
           if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
-            window.instgrm.Embeds.process();
+            try {
+              window.instgrm.Embeds.process();
+            } catch (err) {
+              console.warn('Instagram embed process error', err);
+            }
+          } else {
+            // fallback: attempt to load script if not present
+            const scriptSrc = '//www.instagram.com/embed.js';
+            if (!document.querySelector('script[src="' + scriptSrc + '"]')) {
+              const s = document.createElement('script');
+              s.src = scriptSrc;
+              s.async = true;
+              s.defer = true;
+              s.onload = () => {
+                window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process && window.instgrm.Embeds.process();
+              };
+              document.body.appendChild(s);
+            } else {
+              setTimeout(() => {
+                window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process && window.instgrm.Embeds.process();
+              }, 700);
+            }
           }
         });
       });
@@ -157,7 +281,6 @@
 
       var img = new Image();
       img.onload = function() {
-        // thumbnail exists — no action, keep the open link available
         note.textContent = '';
       };
       img.onerror = function() {
