@@ -164,3 +164,69 @@ body {
     top: 8px;
   }
 }
+/* TICKER - right-to-left infinite scrolling (black & white theme) */
+.ticker-wrap {
+  width: 100%;
+  background: #000;            /* pure black background */
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.ticker {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  /* create a horizontal flow for the two groups */
+}
+
+.ticker__group {
+  display: inline-flex;
+  gap: 48px;                  /* space between items */
+  white-space: nowrap;
+  align-items: center;
+  /* duplicate groups must be inline and continuous */
+}
+
+/* The animation: translateX from 0 -> -50% of combined width */
+.ticker {
+  --duration: 28s;            /* change this to increase/decrease speed */
+  animation: ticker-scroll linear infinite;
+  animation-duration: var(--duration);
+  animation-timing-function: linear;
+  will-change: transform;
+}
+
+/* individual item style */
+.ticker__item {
+  color: #fff;                /* white text */
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+/* Pause on hover/focus for UX */
+.ticker-wrap:hover .ticker,
+.ticker-wrap:focus-within .ticker {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .ticker { animation: none; }
+}
+
+/* Animation creates a continuous leftward motion */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* -50% because we duplicate the group */
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .ticker__item { font-size: 0.86rem; gap: 28px; }
+  .ticker__group { gap: 28px; }
+  .ticker-wrap { padding: 8px 0; }
+}
