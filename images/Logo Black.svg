@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 577.85 229.74">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .36em;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        letter-spacing: .37em;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        letter-spacing: .35em;
+      }
+
+      .cls-6 {
+        letter-spacing: .35em;
+      }
+
+      .cls-7 {
+        letter-spacing: .36em;
+      }
+
+      .cls-8 {
+        letter-spacing: .35em;
+      }
+
+      .cls-9 {
+        font-family: MonumentExtended-Regular, 'Monument Extended';
+        font-size: 50.27px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <g>
+          <polygon class="cls-2" points="235.32 60.33 187.06 154.17 185.56 157.09 185.56 62.11 186.44 60.33 235.32 60.33"/>
+          <polygon class="cls-2" points="324.55 62.58 363.16 96.88 230.62 96.88 230.62 139.95 351.62 139.95 351.62 176.74 230.62 176.74 230.62 229.74 187.06 229.74 187.06 160.74 237.99 61.71 238.7 60.33 322.02 60.33 324.55 62.58"/>
+          <polygon class="cls-2" points="367.64 60.33 367.64 96.83 366.14 95.5 326.55 60.33 367.64 60.33"/>
+          <path class="cls-3" d="M366.14,60.33v35.17l1.5,1.33,1.5,1.34v-37.84h-3ZM186.44,60.33l-.88,1.78-1.5,3.02v94.88l1.5-2.92,1.5-2.92V60.33h-.62Z"/>
+        </g>
+        <polygon class="cls-2" points="235.32 60.33 187.06 154.17 185.56 157.09 184.06 160.01 148.2 229.74 88.67 229.74 1.55 60.33 50.43 60.33 118.43 197.55 184.06 65.13 185.56 62.11 186.44 60.33 235.32 60.33"/>
+        <polygon class="cls-2" points="480.94 145.04 576.29 229.74 516.03 229.74 451.42 171.66 386.56 229.74 326.55 229.74 421.9 145.04 369.14 98.17 367.64 96.83 366.14 95.5 326.55 60.33 386.56 60.33 451.42 118.41 516.03 60.33 576.29 60.33 480.94 145.04"/>
+      </g>
+      <text class="cls-9" transform="translate(0 42.72)"><tspan class="cls-1" x="0" y="0">D</tspan><tspan class="cls-7" x="64.49" y="0">IM</tspan><tspan class="cls-1" x="172.66" y="0">E</tspan><tspan class="cls-8" x="231.72" y="0">N</tspan><tspan class="cls-1" x="299.13" y="0">S</tspan><tspan class="cls-5" x="365.43" y="0">I</tspan><tspan class="cls-1" x="396.59" y="0">O</tspan><tspan class="cls-6" x="462.19" y="0">N</tspan><tspan class="cls-4" x="529.59" y="0">S</tspan></text>
+    </g>
+  </g>
+</svg>

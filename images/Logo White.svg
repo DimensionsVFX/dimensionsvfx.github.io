@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 577.85 229.74">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .36em;
+      }
+
+      .cls-2 {
+        letter-spacing: .37em;
+      }
+
+      .cls-3 {
+        font-family: MonumentExtended-Regular, 'Monument Extended';
+        font-size: 50.27px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-5 {
+        letter-spacing: .35em;
+      }
+
+      .cls-6 {
+        letter-spacing: .35em;
+      }
+
+      .cls-7 {
+        letter-spacing: .36em;
+      }
+
+      .cls-8 {
+        letter-spacing: .35em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Dimensions_VFX_Logo" data-name="Dimensions VFX Logo">
+      <polygon class="cls-4" points="351.62 139.95 230.62 139.95 230.62 96.88 363.16 96.88 324.55 62.58 322.02 60.33 238.7 60.33 237.99 61.71 187.06 160.74 187.06 229.74 230.62 229.74 230.62 176.74 351.62 176.74 351.62 139.95"/>
+      <polygon class="cls-4" points="235.32 60.33 187.06 154.17 185.56 157.09 184.06 160.01 148.2 229.74 88.67 229.74 1.55 60.33 50.43 60.33 118.43 197.55 184.06 65.13 185.56 62.11 186.44 60.33 235.32 60.33"/>
+      <polygon class="cls-4" points="480.94 145.04 576.29 229.74 516.03 229.74 451.42 171.66 386.56 229.74 326.55 229.74 421.9 145.04 369.14 98.17 367.64 96.83 366.14 95.5 326.55 60.33 386.56 60.33 451.42 118.41 516.03 60.33 576.29 60.33 480.94 145.04"/>
+      <text class="cls-3" transform="translate(0 42.72)"><tspan class="cls-1" x="0" y="0">D</tspan><tspan class="cls-7" x="64.49" y="0">IM</tspan><tspan class="cls-1" x="172.66" y="0">E</tspan><tspan class="cls-8" x="231.72" y="0">N</tspan><tspan class="cls-1" x="299.13" y="0">S</tspan><tspan class="cls-5" x="365.43" y="0">I</tspan><tspan class="cls-1" x="396.59" y="0">O</tspan><tspan class="cls-6" x="462.19" y="0">N</tspan><tspan class="cls-2" x="529.59" y="0">S</tspan></text>
+    </g>
+  </g>
+</svg>
