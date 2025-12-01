@@ -16,7 +16,7 @@
   --fg: #ffffff;        /* pure white */
   --muted: #111111;     /* medium gray */
   --card: #000000;
-  --container: 1200px;
+  --container: 1400px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
