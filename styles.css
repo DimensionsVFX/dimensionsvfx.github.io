@@ -47,6 +47,26 @@ body {
 .main-nav a { color: var(--muted); text-decoration:none; font-size:14px; padding:6px 6px; }
 .main-nav .cta { border:1px solid #222; padding:6px 10px; border-radius: 999px; color:var(--fg); }
 
+/* Brand link (logo) */
+.brand-link { display:inline-flex; align-items:center; text-decoration:none; }
+.brand-link:focus { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 3px; }
+
+/* Active nav indicator: small line under the current page label */
+.main-nav a { position: relative; padding-bottom: 8px; }
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--fg);
+  bottom: -4px;
+  border-radius: 2px;
+}
+
+/* Slightly reduce opacity for non-active links to emphasize active */
+.main-nav a:not(.active) { opacity: 0.85; }
+
 /* hero */
 .hero { position:relative; height:56vh; min-height:420px; margin-top:68px; overflow:hidden; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .hero-inner { position:relative; height:100%; width:100%; }
