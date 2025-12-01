@@ -186,3 +186,249 @@ body {
   .marquee-wrap { padding: 12px 0; }
   .reels-scroll-btn { display: none !important; }
 }
+
+/* CONTACT PAGE */
+.contact-hero {
+  height: 35vh;
+  min-height: 300px;
+  margin-top: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  border-bottom: 1px solid #222;
+  margin-bottom: 0;
+}
+
+.contact-hero-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 32px 20px;
+}
+
+.contact-hero-content h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.contact-hero-content .lead {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 70ch;
+  color: var(--muted);
+}
+
+/* Contact form + info grid */
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-form-wrap h2,
+.contact-info h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--fg);
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: 1px solid #333;
+  color: var(--fg);
+  padding: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.form-btn {
+  background: #ffffff;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.form-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.form-note {
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 18px;
+}
+
+/* Contact info sidebar */
+.contact-info {
+  padding: 32px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  background: #0a0a0a;
+}
+
+.info-block {
+  margin-bottom: 32px;
+}
+
+.info-block:last-child {
+  margin-bottom: 0;
+}
+
+.info-block h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  color: var(--fg);
+}
+
+.contact-link {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid #444;
+  transition: border-color 0.2s;
+  padding-bottom: 2px;
+}
+
+.contact-link:hover {
+  border-color: #888;
+}
+
+.info-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 60px 20px;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+}
+
+.faq-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--fg);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.faq-item h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--fg);
+  line-height: 1.3;
+}
+
+.faq-item p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Contact page responsive */
+@media (max-width: 980px) {
+  .contact-hero-content h1 {
+    font-size: 28px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-hero {
+    height: 28vh;
+    min-height: 240px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 24px;
+  }
+
+  .contact-hero-content .lead {
+    font-size: 14px;
+  }
+
+  .contact-section {
+    padding: 40px 16px;
+  }
+
+  .contact-info {
+    padding: 24px;
+  }
+
+  .faq-section {
+    padding: 40px 16px;
+  }
+
+  .faq-section h2 {
+    font-size: 18px;
+  }
+}

@@ -1,1 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — Dimensions VFX</title>
+  <meta name="description" content="Get in touch with Dimensions VFX. Reach out via email or Instagram." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/LogoBlack.png" alt="Dimensions VFX logo" class="logo-img" />
+      </div>
 
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT PAGE HERO -->
+  <section class="contact-hero container">
+    <div class="contact-hero-inner">
+      <div class="contact-hero-content">
+        <h1>Get in Touch</h1>
+        <p class="lead">
+          Have a project in mind? Let's talk. Share your track, timeline, and vision — we'll get back to you within 48 hours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + INFO ROW -->
+  <section class="contact-section container">
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form-wrap">
+        <h2>Send us a message</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="form-btn">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <aside class="contact-info">
+        <h2>Contact Info</h2>
+        <div class="info-block">
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:dimensionsvfx@gmail.com" class="contact-link">dimensionsvfx@gmail.com</a>
+          </p>
+          <p class="info-desc">Direct inquiries, briefs, and project details</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Instagram</h3>
+          <p>
+            <a href="https://www.instagram.com/dimensionsvfx/" target="_blank" rel="noopener" class="contact-link">@dimensionsvfx</a>
+          </p>
+          <p class="info-desc">DM us or check out our latest work</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Response Time</h3>
+          <p>We aim to respond within <strong>48 hours</strong></p>
+          <p class="info-desc">During business hours, typically faster</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQs Section (optional) -->
+  <section class="faq-section container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What information should I include in my inquiry?</h3>
+        <p>Share your track (or brief description), desired timeline, budget range (if applicable), and any visual references or style preferences. The more details, the better we can assist.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do you work with artists internationally?</h3>
+        <p>Yes! We work with artists worldwide. Our team is remote-first and experienced in coordinating across time zones. Most of our communication happens via email and calls.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are your typical turnaround times?</h3>
+        <p>Turnaround depends on project scope and complexity. We'll provide a timeline estimate once we understand your brief. Most projects take 2–6 weeks.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do you offer revisions?</h3>
+        <p>Yes, we include revision rounds in our standard process. The exact number depends on your project agreement.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Dimensions VFX. All rights reserved.</div>
+      <div class="foot-right">3D Visuals • CGI • VFX • Cover Art</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple form handler: show confirmation message
+    (function() {
+      const form = document.getElementById('contactForm');
+      const formNote = document.getElementById('formNote');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Validate
+        if (!name || !email || !subject || !message) {
+          formNote.textContent = 'Please fill in all fields.';
+          formNote.style.color = '#ff6b6b';
+          return;
+        }
+
+        // In production, you'd send this to a backend or email service.
+        // For now, show a success message and clear the form.
+        formNote.textContent = 'Thanks for reaching out! We'll get back to you soon.';
+        formNote.style.color = '#51cf66';
+        form.reset();
+
+        // Clear message after 5 seconds
+        setTimeout(() => {
+          formNote.textContent = '';
+        }, 5000);
+      });
+    })();
+  </script>
+</body>
+</html>
