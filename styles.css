@@ -14,7 +14,7 @@
   --bg: #000000;        /* pure black */
   --bg-2: #0a0a0a;      /* very dark gray */
   --fg: #ffffff;        /* pure white */
-  --muted: #000000;     /* medium gray */
+  --muted: #111111;     /* medium gray */
   --card: #000000;
   --container: 1200px;
 }
