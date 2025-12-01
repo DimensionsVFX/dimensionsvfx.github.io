@@ -12,7 +12,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="images/Logo White.svg" alt="Dimensions VFX logo" class="logo-img" />
+        <img src="images/LogoBlack.png" alt="Dimensions VFX logo" class="logo-img" />
       </div>
 
       <nav class="main-nav">
@@ -26,18 +26,20 @@
 
   <!-- HERO / TOP VIDEO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="images/Globe3D.mp4" type="video/mp4" />
-      <!-- fallback image -->
-      <img src="images/Globe3D.png.png" alt="Globe preview" />
-    </video>
+    <div class="container hero-inner">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="images/Globe3D.mp4" type="video/mp4" />
+        <!-- fallback image -->
+        <img src="images/Globe3D.png.png" alt="Globe preview" />
+      </video>
 
-    <div class="hero-overlay container">
-      <div class="hero-copy">
-        <h1>Cinematic visuals for artists who have something exceptional.</h1>
-        <p class="lead">
-          Dimensions VFX is a visual studio crafting 3D music videos, CGI-driven promos, cover art and thumbnails for artists worldwide.
-        </p>
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <h1>Cinematic visuals for artists who have something exceptional.</h1>
+          <p class="lead">
+            Dimensions VFX is a visual studio crafting 3D music videos, CGI-driven promos, cover art and thumbnails for artists worldwide.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -91,12 +93,13 @@
       <div class="video-wrap">
         <iframe
           id="ytplayer"
-          src="https://www.youtube.com/watch?v=jf0zZRR6r6E&list=RDjf0zZRR6r6E&start_radio=1"
+          src="https://www.youtube.com/embed/jf0zZRR6r6E?si=36W47xhhVpxwvl4O&amp;controls=0"
           title="Dimensions VFX Showreel"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
+        <a class="open-youtube" href="https://www.youtube.com/watch?v=jf0zZRR6r6E" target="_blank" rel="noopener">Open on YouTube</a>
       </div>
     </div>
 
@@ -140,6 +143,27 @@
           }
         });
       });
+    })();
+
+    // Check YouTube thumbnail to give a better fallback if embed fails
+    (function() {
+      var videoId = 'jf0zZRR6r6E';
+      var note = document.createElement('div');
+      note.id = 'video-note';
+      note.style.marginTop = '8px';
+      note.style.color = '#bbb';
+      var wrap = document.querySelector('.video-wrap');
+      wrap.parentNode.insertBefore(note, wrap.nextSibling);
+
+      var img = new Image();
+      img.onload = function() {
+        // thumbnail exists — no action, keep the open link available
+        note.textContent = '';
+      };
+      img.onerror = function() {
+        note.textContent = 'The video appears unavailable for embedding. Use "Open on YouTube" to view it.';
+      };
+      img.src = 'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg';
     })();
   </script>
 </body>
