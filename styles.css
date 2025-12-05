@@ -67,6 +67,17 @@ body {
 /* Slightly reduce opacity for non-active links to emphasize active */
 .main-nav a:not(.active) { opacity: 0.85; }
 
+/* Mobile nav toggle (hamburger) */
+.nav-toggle { display:none; background: transparent; border: none; color: var(--fg); cursor: pointer; align-items:center; justify-content:center; padding:8px; }
+.nav-toggle .hamburger { display:block; width:22px; height:2px; background:var(--fg); position:relative; transition: transform 0.18s ease; }
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after { content: ""; position:absolute; left:0; right:0; height:2px; background:var(--fg); transition: transform 0.18s ease, top 0.18s ease, opacity 0.18s ease; }
+.nav-toggle .hamburger::before { top: -6px; }
+.nav-toggle .hamburger::after { top: 6px; }
+.nav-toggle.open .hamburger { transform: rotate(45deg); }
+.nav-toggle.open .hamburger::before { transform: rotate(-90deg); top: 0; }
+.nav-toggle.open .hamburger::after { opacity: 0; }
+
 /* hero */
 .hero { position:relative; height:56vh; min-height:420px; margin-top:68px; overflow:hidden; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .hero-inner { position:relative; height:100%; width:100%; }
@@ -114,6 +125,30 @@ body {
   .logo-text { display:none; }
   .showreel-section { padding:28px 16px; }
   .instagram-row-wrap { padding:28px 16px; }
+}
+
+/* Mobile: show toggle and style dropdown nav */
+@media (max-width: 520px) {
+  .nav-toggle { display:flex; }
+
+  .main-nav {
+    display: none !important;
+    position: absolute;
+    top: 68px;
+    right: 20px;
+    background: rgba(0,0,0,0.98);
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 12px;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+    z-index: 120;
+  }
+
+  .main-nav.open { display:flex !important; }
+
+  .main-nav a { padding: 8px 12px; display:block; }
 }
 /* Ensures official IG embed fits fully */
 /* MARQUEE - infinite horizontal scrolling "DIMENSIONS VFX" */

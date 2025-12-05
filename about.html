@@ -1,1 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us — Dimensions VFX</title>
+  <meta name="description" content="About Dimensions VFX — who we are, our mission and team." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Go to homepage">
+          <img src="images/LogoBlack.png" alt="Dimensions VFX logo" class="logo-img" />
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" class="active" aria-current="page">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-hero container">
+    <div class="contact-hero-inner">
+      <div class="contact-hero-content">
+        <h1>About Dimensions VFX</h1>
+        <p class="lead">We are a visual studio crafting cinematic 3D music videos, CGI-driven promos and striking cover art for artists and labels worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section container">
+    <div class="contact-grid">
+      <main>
+        <h2>Our Story</h2>
+        <p>Founded by a collective of directors, 3D artists and VFX specialists, Dimensions VFX blends a streetwise sensibility with luxury production values. We focus on visual storytelling that elevates music and artist identity.</p>
+
+        <h3 style="margin-top:24px;">Our Approach</h3>
+        <p>We combine concept development with technical craft — procedural 3D, photoreal compositing and cinematic lighting — to deliver visuals that feel both bold and timeless.</p>
+
+        <h3 style="margin-top:24px;">Collaborations</h3>
+        <p>We work directly with artists, labels and creative agencies. Our remote-first workflow lets us coordinate across time zones while keeping quality and deadlines tight.</p>
+
+        <h3 style="margin-top:24px;">Meet The Team</h3>
+        <p>Our team includes Directors, 3D Generalists, Compositors and Motion Designers. We believe in clear communication, iterative feedback, and delivering work that artists are proud to release.</p>
+      </main>
+
+      <aside class="contact-info">
+        <h2>Quick Info</h2>
+        <div class="info-block">
+          <h3>Email</h3>
+          <p><a href="mailto:dimensionsvfx@gmail.com" class="contact-link">dimensionsvfx@gmail.com</a></p>
+        </div>
+
+        <div class="info-block">
+          <h3>Location</h3>
+          <p>Remote-first; collaborators in USA, UK, AUS & Nigeria</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Availability</h3>
+          <p>We accept new briefs and provide timeline estimates after reviewing materials.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Dimensions VFX. All rights reserved.</div>
+      <div class="foot-right">3D Visuals • CGI • VFX • Cover Art</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    (function() {
+      const navToggle = document.getElementById('navToggle');
+      const mainNav = document.getElementById('mainNav');
+      if (!navToggle || !mainNav) return;
+
+      navToggle.addEventListener('click', function() {
+        const open = mainNav.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open);
+      });
+
+      mainNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', function() {
+          mainNav.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
 
