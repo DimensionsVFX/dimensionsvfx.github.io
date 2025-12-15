@@ -68,7 +68,7 @@
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
 
-          <button type="submit" class="form-btn">Send Message</button>
+          <button type="submit" class="form-btn" id="formBtn">Send Message</button>
           <p class="form-note" id="formNote"></p>
         </form>
       </div>
@@ -141,6 +141,7 @@
     (function() {
       const form = document.getElementById('contactForm');
       const formNote = document.getElementById('formNote');
+      const formBtn = document.getElementById('formBtn');
 
       if (!form) return;
 
@@ -160,16 +161,26 @@
           return;
         }
 
+        // Set loading state
+        formBtn.disabled = true;
+        formBtn.textContent = 'Sending...';
+
         // In production, you'd send this to a backend or email service.
         // For now, show a success message and clear the form.
-        formNote.textContent = "Thanks for reaching out! We'll get back to you soon.";
-        formNote.style.color = '#51cf66';
-        form.reset();
-
-        // Clear message after 5 seconds
         setTimeout(() => {
-          formNote.textContent = '';
-        }, 5000);
+          formNote.textContent = "Thanks for reaching out! We'll get back to you soon.";
+          formNote.style.color = '#51cf66';
+          form.reset();
+
+          // Restore button state
+          formBtn.disabled = false;
+          formBtn.textContent = 'Send Message';
+
+          // Clear message after 5 seconds
+          setTimeout(() => {
+            formNote.textContent = '';
+          }, 5000);
+        }, 1000); // Simulate network delay
       });
     })();
 
