@@ -92,9 +92,30 @@ body {
 .scroll-label { color:var(--muted); font-size:11px; letter-spacing:0.12em; margin-bottom:20px; text-transform:uppercase; opacity:0.7; }
 .reels { display:flex; gap:16px; overflow-x:auto; padding-bottom:8px; scrollbar-width:none; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scroll-padding-left: 20px; }
 .reels::-webkit-scrollbar { display:none; }
-.reel-item { min-width:220px; max-width:220px; border-radius:8px; overflow:hidden; border:1px solid #222; background:var(--card); cursor:pointer; flex: 0 0 auto; scroll-snap-align: start; transition: border-color 0.2s; }
+.reel-item { min-width:220px; max-width:220px; border-radius:8px; overflow:hidden; border:1px solid #222; background:var(--card); cursor:pointer; flex: 0 0 auto; scroll-snap-align: start; transition: border-color 0.2s; position: relative; }
 .reel-item:hover { border-color:#444; }
 .reel-poster img { display:block; width:100%; height:100%; object-fit:cover; }
+
+/* External link icon for reels */
+.reel-poster { position: relative; display: block; }
+.external-link-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 999px;
+  padding: 5px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.2s ease-out;
+  z-index: 10;
+}
+.reel-item:hover .external-link-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 /* showreel + copy */
 .showreel-section { display:grid; grid-template-columns:1.2fr 0.6fr; gap:32px; padding:48px 20px; align-items:center; margin-top:32px; }
