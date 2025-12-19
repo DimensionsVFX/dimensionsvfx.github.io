@@ -1,0 +1,5 @@
+## 2024-07-25 - SVG `currentColor` Pitfall with `<img>` Tags
+
+**Learning:** When an SVG is used as the `src` for an `<img>` tag, it is rendered as a static image. CSS properties like `color` from the parent element do not penetrate the image boundary. Therefore, using `stroke="currentColor"` or `fill="currentColor"` inside the SVG file will not work as it does for inline SVGs. The browser defaults to using black for `currentColor` in this context, which can make icons invisible on dark backgrounds.
+
+**Action:** For all future tasks involving SVG icons in `<img>` tags, I will ensure that the colors are hardcoded directly within the SVG file (e.g., `stroke="#FFFFFF"`). If dynamic color changes based on CSS (like hover states) are required, I will implement the SVG inline directly within the HTML instead of using an `<img>` tag.
