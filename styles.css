@@ -219,6 +219,12 @@ body {
   transform: translateY(-50%) scale(1.02);
 }
 
+.reels-scroll-btn:focus {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
 .reels-scroll-left {
   left: 8px;
 }
