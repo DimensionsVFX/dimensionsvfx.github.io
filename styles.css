@@ -219,6 +219,11 @@ body {
   transform: translateY(-50%) scale(1.02);
 }
 
+.reels-scroll-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
 .reels-scroll-left {
   left: 8px;
 }
