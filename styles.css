@@ -239,7 +239,6 @@ body {
 @media (max-width: 720px) {
   .marquee__text { font-size: 8px; padding: 0 24px; }
   .marquee-wrap { padding: 12px 0; }
-  .reels-scroll-btn { display: none !important; }
 }
 
 /* CONTACT PAGE */
