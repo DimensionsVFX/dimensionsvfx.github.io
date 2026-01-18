@@ -1,0 +1,3 @@
+## 2024-07-25 - Accessible Names for Symbolic Buttons
+**Learning:** Buttons that use symbolic characters (e.g., '‹', '›') as their visual content must have an `aria-label` to provide an accessible name for screen readers. This is a critical pattern for ensuring interactive elements are understandable to users of assistive technologies.
+**Action:** I will proactively check for buttons that use icons or symbols as their primary content and add a descriptive `aria-label` attribute if one is missing.
