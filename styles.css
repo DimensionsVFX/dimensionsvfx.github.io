@@ -20,6 +20,12 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Accessible focus indicators */
+:focus-visible {
+  outline: 2px solid #fff !important;
+  outline-offset: 4px !important;
+}
 html, body { height: 100%; }
 body {
   background: var(--bg);
@@ -49,7 +55,7 @@ body {
 
 /* Brand link (logo) */
 .brand-link { display:inline-flex; align-items:center; text-decoration:none; }
-.brand-link:focus { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 3px; }
+.brand-link:focus { outline: none; }
 
 /* Active nav indicator: small line under the current page label */
 .main-nav a { position: relative; padding-bottom: 8px; }
@@ -331,7 +337,6 @@ body {
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
   border-color: #666;
 }
 
