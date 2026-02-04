@@ -47,9 +47,33 @@ body {
 .main-nav a { color: var(--muted); text-decoration:none; font-size:14px; padding:6px 6px; }
 .main-nav .cta { border:1px solid #222; padding:6px 10px; border-radius: 999px; color:var(--fg); }
 
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  color: #000;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Global Focus Styles */
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
 /* Brand link (logo) */
 .brand-link { display:inline-flex; align-items:center; text-decoration:none; }
-.brand-link:focus { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 3px; }
 
 /* Active nav indicator: small line under the current page label */
 .main-nav a { position: relative; padding-bottom: 8px; }
