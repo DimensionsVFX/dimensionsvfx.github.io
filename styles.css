@@ -49,7 +49,33 @@ body {
 
 /* Brand link (logo) */
 .brand-link { display:inline-flex; align-items:center; text-decoration:none; }
-.brand-link:focus { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 3px; }
+
+/* Skip to content link */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #ffffff;
+  color: #000000;
+  padding: 10px 20px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease-in-out;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Better Focus Visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid #ffffff !important;
+  outline-offset: 3px !important;
+}
 
 /* Active nav indicator: small line under the current page label */
 .main-nav a { position: relative; padding-bottom: 8px; }
