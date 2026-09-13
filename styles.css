@@ -30,6 +30,29 @@ body {
   line-height: 1.5;
 }
 
+/* Skip link for keyboard accessibility */
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 4px;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
 /* container */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
 
